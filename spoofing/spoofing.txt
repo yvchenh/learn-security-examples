@@ -1,1 +1,5 @@
 Briefly explain the vulnerability and why the secure version prevents the vulnerability.
+
+The vulnerability happens because the server doesn't verify whether the incoming requests originate from a trusted source.
+If a user who is logged into your application visits this page, the script executes and sends a request to the server without the user's conscious consent.
+Spoofing violates integrity and authenticity of the CIA properties.

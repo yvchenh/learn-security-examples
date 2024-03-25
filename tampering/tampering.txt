@@ -1,0 +1,3 @@
+This vulnerability can lead to unauthorized access to user data, session hijacking, and other malicious activities.
+In the initial version, user input (the name entered in the /register route) was directly stored in and rendered by the server without sanitization. This made it possible for an attacker to inject malicious script tags as part of the name.
+Tampering with data violates the integrity aspect of the CIA triad. Integrity ensures that information is accurate and reliable, and remains unaltered during transmission or storage. 
