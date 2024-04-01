@@ -1,2 +1,7 @@
 - Briefly explain the vulnerability and why the secure version is better at preventing repudiation than the insecure version.
 - What additional security mechanisms can you incorporate to prevent such attacks?
+
+By logging each request, including the timestamp, request method, URL, and client IP, the secure version can maintain a record of all operations, which is crucial for auditing and tracking suspicious activities.
+The application logs specific actions, like sending messages and accessing the message list. This detailed logging helps in tracing specific actions back to users, improving accountability and aiding in forensic analysis.
+The secure version implements error handling middleware that logs errors and sends a generic error message to the client. This prevents sensitive information leakage and ensures that the server can gracefully handle errors.
+To further enhance security, considering ensure that only authenticated and authorized users can send messages and access the message log. Use secure authentication methods like OAuth, JWT, or session-based authentication.

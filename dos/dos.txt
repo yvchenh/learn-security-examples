@@ -1,2 +1,9 @@
 - Briefly explain the vulnerability and why the secure version prevents the vulnerability.
 - What additional security mechanisms can you incorporate to prevent such attacks?
+
+
+The provided code has a NoSQL injection vulnerability in the /userinfo route where user input (id from req.query) is used directly in a MongoDB query without proper validation or sanitization. 
+This vulnerability can be exploited by attackers to inject malicious code into the query, potentially allowing them to access or manipulate data in the database.
+In the secure version, there's a check to ensure the id follows the expected format (a 24-character hexadecimal string, which is the format of MongoDB ObjectIds). 
+This helps ensure that only properly formatted IDs are passed to the database query, mitigating the risk of injection.
+To further enhance security, using prepared statements or similar mechanisms can prevent injection by separating the query structure from its data.
